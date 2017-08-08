@@ -1,6 +1,6 @@
 {
   "name": "performr-runner-metadata-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parse metadata directives within performr-runner script files",
   "main": "lib/index.js",
   "scripts": {
