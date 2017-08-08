@@ -37,5 +37,18 @@ describe('performr-runner-metadata-parser', () => {
             {key: 'Foo', value: 'quux'},
             {key: 'Empty', value: ''},
         ]);
-    })
+    });
+
+    it('Should not fail no scripts that end with a single line comment', () => {
+        const script = `
+        'Foo: bar';
+        baz();
+        // comment without newline`;
+
+        const result = metaDataParser(script);
+
+        assert.deepEqual(result, [
+            {key: 'Foo', value: 'bar'},
+        ]);
+    });
 });
